@@ -26,7 +26,7 @@ const int DeusAbsoluto = 333;
 
 printf ("Deus está vindo por nossas almas. %d\a", DeusAbsoluto);
 
-
+printf ("O fim dos tempos é inevitável e a morte do ser humano é uma certeza");
 
 
 return 0;
