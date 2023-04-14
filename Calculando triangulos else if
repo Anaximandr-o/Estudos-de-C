@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+// Triangulos :o
+
+int main()
+{
+    int x, y, z;
+    
+    printf ("X, Y, Z: ");
+    scanf ("%d %d %d", &x, &y, &z);
+    
+    if (x+y <= z || x + z <= y || y + z <= x)
+        puts("Nao e triangulo");
+    else if (x != y && y != z && z != x)
+        puts ("Escaleno");
+    else if (x == y && y == z)
+        puts ("Equilatero");
+    else
+        puts ("Isosceles");
+
+    return 0;
+}
