@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+//calculando ano bissexto usando else if :)
+
+int
+main ()
+{
+  int ano, calculo, novoBi;
+  printf ("Digite um ano:");
+  scanf ("%d", &ano);
+
+  calculo = 4 - (ano % 4);
+  novoBi = calculo + ano;
+
+  if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0)
+    puts ("Bissexto");
+  else
+    {
+      printf ("%d\n", novoBi);
+    }
+
+  return 0;
+}
