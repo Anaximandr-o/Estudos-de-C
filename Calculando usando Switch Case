@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int
+main ()
+{
+  char op;
+  float a, b;
+  float resultado;
+
+  printf ("Escreve ai vai: ");
+  scanf ("%f %c %f", &a, &op, &b);
+
+  switch (op)
+    {
+    case '+':
+      resultado = a + b;
+      printf ("%.3f %c %.3f = %.3f\n", a, op, b, resultado);
+      break;
+    case '-':
+      resultado = a - b;
+      printf ("%.3f %c %.3f = %.3f\n", a, op, b, resultado);
+      break;
+    case '*':
+      resultado = a * b;
+      printf ("%.3f %c %.3f = %.3f\n", a, op, b, resultado);
+      break;
+    case '/':
+      if (b == 0)
+	puts ("Divisao por zero");
+      else
+	{
+	  resultado = a / b;
+	  printf ("%.3f %c %.3f = %.3f\n", a, op, b, resultado);
+	}
+
+      break;
+    default:
+      printf ("ERRO HAHAHAHAHAHHA\n");
+    }
+  return 0;
+}
