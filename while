@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, c, k, soma, cont;
+    
+    
+    
+    printf("inicio e fim do int: ");
+    scanf("%d %d", &a, &c);
+    
+    printf("Pular de: ");
+    scanf("%d", &k);
+    
+    cont = a;
+    soma = 0;
+
+    while (cont <= c) {
+        printf("%d ", cont);
+        
+        soma = soma + cont;
+        
+        cont = cont + k;
+        
+    }
+
+
+    return 0;
+}
