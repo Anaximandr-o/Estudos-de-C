@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+//exercicio 6.5
+//Calculando a média dos alunos e quais estão acima dela
+
+int main()
+{
+    int n;
+    float soma;
+    
+    do {
+        printf("Quantidade de alunos ");
+        scanf("%d", &n);
+        
+        if (n <= 0)
+            printf("Valor invalido. Digite um numero positivo.");
+            
+    } while (n<= 0);
+    
+    float notas[n];
+    
+    for(int i = 0; i < n; i++){
+    printf("Nota do aluno %d: ", i+1);
+    scanf("%f", &notas[i]);
+    soma += notas[i];
+    }
+    
+    float media;
+    media = soma / n;
+
+    printf("Alunos acima da media (%.1f): ", media);
+    for (int i = 0; i < n; i++)
+        if (notas[i] > media)
+            printf("Aluno %d: %.1f\n", i+1, notas[i]);
+    
+
+    return 0;
+}
