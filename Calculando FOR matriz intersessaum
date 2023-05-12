@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, m;
+    printf("Digite o valor n e o valor m: ");
+    scanf("%d %d", &n, &m);
+    
+    int v[n]; 
+    int w[m];
+    
+    puts("Valores de v: ");
+    for (int i = 0; i < n; i++){
+        printf("V[%d] = ", i);
+        scanf("%d", &v[i]);
+    }
+    
+    puts("Valores de w: ");
+    for (int i = 0; i < m; i++){
+        printf("W[%d] = ", i);
+        scanf("%d", &w[i]);
+    }
+    
+    int TAM;
+        if (n > m)
+            TAM = n;
+            else TAM = m;
+            
+    int k[TAM];
+    
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+        
+        bool achei = false;
+        for (int p = 0; p < m; p++)
+            if (v[i] == w[p])
+                achei = true;
+                
+        if (achei)
+            k[j++] = v[i];
+    }
+        puts("Intersecao de V e W");
+        for (int i = 0; i < j; i++)
+        printf("%d", k[i]);
+            
+    return 0;
+}
