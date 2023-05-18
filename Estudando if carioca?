@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main()
+{
+    int feijao, ponte, metro, rock;
+    
+    do{
+    printf("Voce come feijao frequentemente? ");
+    scanf("%d", &feijao);
+    if (feijao != 1 && feijao != 0)
+    printf("Valor invalido. Digite 1 para sim e 0 para nao");
+    }while (feijao != 1 && feijao != 0);
+    do{
+    printf("Voce ja passou pela ponte Rio Niteroi? ");
+    scanf("%d", &ponte);
+    if (ponte != 1 && ponte != 0)
+    printf("Valor invalido. Digite 1 para sim e 0 para nao");
+    }while (ponte != 1 && ponte != 0);
+    do{
+    printf("Voce ja pegou o metro na estacao carioca? ");
+    scanf("%d", &metro);
+    if (metro != 1 && metro != 0)
+    printf("Valor invalido. Digite 1 para sim e 0 para nao");
+    }while (metro != 1 && metro != 0);
+    do{
+    printf("Voce ja foi a alguma edicao rock in rio? ");
+    scanf("%d", &rock);
+    if (rock != 1 && rock != 0)
+    printf("Valor invalido. Digite 1 para sim e 0 para nao");
+    }while (rock != 1 && rock != 0);
+    int soma;
+    
+    soma = feijao + ponte + metro + rock;
+    
+    if (soma == 4 || soma == 3)
+        printf ("Certamente Carioca.");
+    else if (soma == 2 || soma == 1)
+        printf ("Possivelmente Carioca");
+    else 
+        printf ("Nao-Carioca (eca).");
+
+    return 0;
+}
