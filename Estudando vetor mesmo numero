@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+//criando um vetor no qual o usuario nao pode digitar o mesmo numero
+
+int main()
+{
+    int n;
+
+    printf("Qual o tamanho do vetor fala ");
+    scanf("%d", n);
+    
+    int v[n];
+    int k;
+    int qtd_numeros = 0; //quantidade de numeros inseridos no vetor
+    
+    for (int i = 0; i < n; i++){
+        printf("Numero: ");
+        scanf("%d", &k);
+           
+        bool achou = false;
+        for (int j = 0; j < qtd_numeros)
+        if (v[j] == k)
+            achou = true;
+            
+        if (! achou) {
+            v[i] = k;
+            qtd_numeros++;
+        }
+    }
+    return 0;
+}
