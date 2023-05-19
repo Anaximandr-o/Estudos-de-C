@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    float w[12];
+    float u[12];
+    int s;
+    
+    for(int i = 0; i < 12; i++){
+        printf("Digite o numero do vetor: ");
+        scanf("%f", &w[i]);
+    }
+    
+    for(int i = 0; i < 12; i++){
+        if(i % 2 == 0)
+            u[i] = w[i]*3;
+        else
+            u[i] = w[i]/2;
+    }
+    
+    for(int i = 0; i < 12; i++){
+        printf("\n%f", u[i]);
+    }
+        
+
+    return 0;
+}
