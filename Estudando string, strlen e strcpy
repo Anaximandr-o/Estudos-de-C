@@ -3,7 +3,7 @@
 
 int main()
 {
-    char frase[100];
+    char frase[100], fraseFalsa[100];
     
     do{
         printf("Digite uma frase: ");
@@ -16,6 +16,14 @@ int main()
     
     printf("Frase digitada: [%s]\n", frase);
     printf("Essa frase tem %d caracteres\n", strlen(frase)); //mostra o tamanho da frase
+    
+    strcpy(fraseFalsa, frase);
+    
+    printf("Frase falsa: %s\n", fraseFalsa);
+    
+    strcpy(fraseFalsa, "ESSA FRASE É FALSA CUIDADO");
+    
+    printf("Frase verdadeira: %s\n", fraseFalsa);
 
     return 0;
 }
