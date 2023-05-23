@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char frase[100];
+    
+    do{
+        printf("Digite uma frase: ");
+        gets(frase);
+    
+        if(strlen(frase) == 0)
+            printf("Valor invalido.\n");
+            
+    }while (strlen(frase) == 0);
+    
+    printf("Frase digitada: [%s]\n", frase);
+    printf("Essa frase tem %d caracteres\n", strlen(frase)); //mostra o tamanho da frase
+
+    return 0;
+}
