@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char frase[100];
+    
+    printf("Imprima uma frase: ");
+    gets(frase);
+    
+    int j = strlen(frase) - 1;
+    for(int i = 0; i < strlen(frase)/2; i++){
+        char temp = frase[i];
+        frase[i] = frase[j];
+        frase[j] = temp;
+        j--;
+    }
+    
+    puts(frase);
+        
+
+    return 0;
+}
