@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    int cv = 0; 
+    int cc = 0; 
+    int cd = 0; 
+    int co = 0;
+    
+    char frase[100];
+    char aux[10];
+    
+    printf("Digite uma frase baby boy: ");
+    gets(frase);
+    
+    for (int i = 0; i < strlen(frase); i++){
+        if(isalpha(frase[i])){
+            aux[i] = tolower(frase[i]);
+            if(aux[i] == 'a'|| aux[i] == 'e'|| aux[i] == 'i'|| aux[i] == 'o'|| aux[i] == 'u')
+            cv++;
+            else
+            cc++;
+        }
+        else if(isdigit(frase[i])){
+            cd++;
+        }
+        else
+            co++;
+    }
+    
+    printf("Contador de vogais: %d\n", cv);
+    printf("Contador de consoantes: %d\n", cc);
+    printf("Contador de digitos: %d\n", cd);
+    printf("Contador de outros: %d\n", co);
+    return 0;
+}
