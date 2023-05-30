@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+//Quando a main invoca a funcao, ativa uma arma de portal 2 no codigo, rodando a funcao chamada e depois voltando a rodar a main de onde parou
+
+void converte_temperatura (){
+    printf("IHAHAHAHU\n");
+    
+}
+
+int main()
+{
+    puts("Funcione maquina: ");
+    
+    converte_temperatura ();
+    
+    puts("Oieeeeeee, voltei. Quer ver de novo? ");
+    
+    converte_temperatura ();
+    
+    puts("Voce nunca mais vera esse codigo.");
+}
