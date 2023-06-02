@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+void segundo_grau (float a, float b, float c){
+    
+    float x1, x2;
+    
+    if(a == 0)
+        puts("Não há raízes");
+    else if(pow(b,2) - 4 * a * c < 0)
+        puts("Não há raízes");
+    else{
+        x1 = (-b + (sqrt(pow(b,2) - 4 * a * c))) / (2 * a);
+        x2 = (-b - (sqrt(pow(b,2) - 4 * a * c))) / (2 * a);
+        printf("A primeira raiz é %f e a segunda é %f", x1, x2);
+    }
+}
+
+int main()
+{
+    float a, b, c;
+    
+    printf("Qual o valor de A? ");
+    scanf("%f", &a);
+    
+    printf("Qual o valor de B? ");
+    scanf("%f", &b);
+    
+    printf("Qual o valor de C? ");
+    scanf("%f", &c);
+    
+    segundo_grau(a, b, c);
+
+    
+}
