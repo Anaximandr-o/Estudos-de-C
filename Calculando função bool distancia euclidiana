@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+
+bool colide_esfera(float x1, float y1, float r1, float x2, float y2, float r2){
+    float distanciaEuclidiana;
+    
+    distanciaEuclidiana = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+    
+    if(distanciaEuclidiana <= r1 + r2)
+        return true;
+    else
+        return false;
+    
+}
+
+int main()
+{
+    float x1, x2, y1, y2, r1, r2;
+    
+    printf("Qual o valor x1? ");
+    scanf("%f", &x1);
+    printf("Qual o valor y1? ");
+    scanf("%f", &y1);
+    printf("Qual o valor r1? ");
+    scanf("%f", &r1);
+    printf("Qual o valor x2? ");
+    scanf("%f", &x2);
+    printf("Qual o valor y2? ");
+    scanf("%f", &y2);
+    printf("Qual o valor r2? ");
+    scanf("%f", &r2);
+    
+    bool colisao = colide_esfera(x1, y1, r1, x2, y2, r2);
+    
+    if(colisao)
+        puts("Colidiu!");
+    else
+        puts("Não colidiu!");
+    
+}
