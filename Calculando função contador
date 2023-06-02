@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int digitos (int n, int d){
+    
+    int contador, alarme;
+    contador = 0;
+    
+    if(n == 0 && d == 0)
+        return 1;
+        
+    if(n < 0)
+        n = -n;
+    
+    while(n > 0){
+        alarme = n % 10;
+        if(alarme == d)
+            contador++;
+        n = n/10;
+    }
+    
+    
+    return contador;
+    
+}
+
+int main()
+{
+    int n, digito, d;
+    
+    printf("Qual o valor de N? ");
+    scanf("%d", &n);
+    
+    printf("Qual o valor de D? ");
+    scanf("%d", &d);
+    
+    digito = digitos(n, d);
+    
+    printf("A quantidade de digitos é de %d", digito);
+
+    
+}
