@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+float distancia(int x1, int y1, int x2, int y2)
+{
+    return sqrt((pow(x2 - x1, 2)) + (pow(y2 - y1, 2))); 
+}
+
+float perimetro(int x1, int y1, int x2, int y2, int x3, int y3){
+    
+    float d1 = distancia(x1, y1, x2, y2);
+    float d2 = distancia(x2, y2, x3, y3);
+    float d3 = distancia(x1, y1, x3, y3);
+    
+    
+    if(d1 + d2 <= d3 || d2 + d3 <= d1 || d1 + d3 <= d2)
+        return 0;
+    else
+        return d1 + d2 + d3;
+}
+
+int main()
+{
+    int x1, x2, y1, y2, x3, y3;
+    
+    printf("x1: ");
+    scanf("%d", &x1);
+    printf("y1: ");
+    scanf("%d", &y1);
+    printf("x2: ");
+    scanf("%d", &x2);
+    printf("y2: ");
+    scanf("%d", &y2);
+    printf("x3: ");
+    scanf("%d", &x3);
+    printf("y3: ");
+    scanf("%d", &y3);
+    
+    float p = perimetro(x1, y1, x2, y2, x3, y3);
+    
+    printf("%f", p);
+
+    return 0;
+}
