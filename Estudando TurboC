@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+//Aviso: esse código só vai rodar em TurboC
+
+void desenha_linha(char primeiro, char ultimo, char meio, int qtd){
+    
+    int i;
+    
+    putchar(primeiro);
+    for (i = 0; i < qtd; i++)
+        putchar(meio);
+    putchar(ultimo);
+    putchar('\n');
+}
+
+void moldura(int l, int c){
+    
+    int j;
+    
+    desenha_linha (218, 191, 196, c -2);
+    
+    for(j = 0; j< l - 2; j++){
+    desenha_linha (179, 179, ' ', c -2);
+    }
+    
+    desenha_linha (192, 217, 196, c-2);
+    
+}
+int main(){
+    
+    int l, c;
+    
+    do{
+        printf("Linhas: ");
+        scanf("%d", &l);
+        if(l < 2)
+        puts("Valor invalido");
+    }while(l < 2);
+    
+    do{
+        printf("Colunas: ");
+        scanf("%d", &c);
+        if(c < 2)
+        puts("Valor invalido");
+    }while(c < 2);
+    
+    moldura(l, c);
+    
+    return 0;
+}
