@@ -17,7 +17,7 @@ void calcular_euclidiana()
     printf("Digite um valor y2: ");
     scanf("%d", &y2);
     
-    distancia = sqrt((pow(x2 - x1)) + (pow(y2 - y1));
+    distancia = sqrt((pow(x2 - x1, 2)) + (pow(y2 - y1, 2));
     
     printf("%d", distancia);
 }
