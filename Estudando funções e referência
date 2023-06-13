@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void le_vetor(int v[], int tam) {
+    for(int i = 0; i < tam ; i++) {
+        printf("Digite um no.: ");
+        scanf("%d", &v[i]);
+    }
+}
+
+void imprimir_vetor(int v[], int tam){
+    for(int i = 0; i < tam; i++)
+        printf("%d", v[i]);
+}
+
+int main(){
+    int vetor1[5];
+    
+    int vetor2[8];
+
+    puts("Dados do vetor 1: ");
+    le_vetor(vetor1, 5);
+
+    puts("Dados do vetor 2: ");
+    le_vetor(vetor2, 8);
+
+    puts("\nVetor 1: ");
+    imprimir_vetor (vetor1, 5);
+    
+    puts("Vetor 2: ");
+    imprimir_vetor (vetor2, 8);
+}
