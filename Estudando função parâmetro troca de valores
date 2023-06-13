@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void troca(int &x, int &y){
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+void ordena(int &a, int &b, int &c) {
+    if (a > b)
+        troca(a, b);
+    if (b > c)
+        troca(b, c);
+    if (a > b)
+        troca (a, b);
+}
+
+int main(){
+    int a, b, c;
+    
+    printf("Digite três valores: ");
+    scanf("%d %d %d", &a, &b, &c);
+    
+    ordena(a, b, c);
+    
+    printf("A: %d\nB: %d\nC: %d", a, b, c);
+}
