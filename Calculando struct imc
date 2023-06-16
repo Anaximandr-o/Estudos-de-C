@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+const int TAM = 5;
+
+struct Pessoa{
+    char nome[50];
+    float peso;
+    float altura;
+};
+
+float fazer_imc (float peso, float altura){
+    float imc;
+    
+    imc = peso / pow(altura, 2);
+    
+    return imc;
+}
+
+int main()
+{
+    Pessoa pessoas[TAM];
+    
+    for(int i = 0; i < TAM; i++){
+        printf("Nome: ");
+        gets(pessoas[i].nome);
+        printf("Peso: ");
+        scanf("%f", &pessoas[i].peso);
+        printf("Altura: ");
+        scanf("%f", &pessoas[i].altura);
+        getchar();
+    }
+    
+    for (int i = 0; i < TAM; i++){
+        float imc = fazer_imc (pessoas[i].peso, pessoas[i].altura);
+        printf("Nome: %s\nIMC: %5.1f", pessoas[i].nome, imc); 
+    }
+
+    return 0;
+}
