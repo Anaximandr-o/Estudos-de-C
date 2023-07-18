@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+void modificar(char frase[], char modificada[]){
+    for(int i = 0; i < strlen(frase); i++){
+        if(isalpha(frase[i]))
+            modificada[i] = toupper(frase[i]);
+        else if(isdigit(frase[i])){
+
+            if(frase[i] == '9')
+                modificada[i] = '0';
+            else
+            modificada[i] = frase[i] + 1;
+        }
+
+        else
+            modificada[i] = '-';
+    }
+
+        modificada[strlen(frase)] = 0;
+}
+
+int main(){
+    char frase[50];
+    char modificada[50];
+
+    printf("Frase: ");
+    gets(frase);
+
+
+    modificar(frase, modificada);
+
+    puts(modificada);
+
+}
