@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+void modificar(int v[], int n, int pares[], int &qtd_pares, int impares[], int &qtd_impares){
+    
+    qtd_impares = 0;
+    qtd_pares = 0;
+
+    for(int i = 0; i < n; i++){
+        if(v[i] % 2 == 0){
+            pares[qtd_pares] = v[i];
+            qtd_pares++;
+        }
+        else{
+            impares[qtd_impares] = v[i]; 
+            qtd_impares++;
+        }
+    }
+
+
+}
+
+int main(){
+    int n;
+
+    printf("N: ");
+    scanf("%d", &n);
+
+    int v[n];
+    int pares[n];
+    int impares[n];
+    int qtd_pares;
+    int qtd_impares;
+
+    for(int i = 0; i < n; i++){
+        printf("Algoritmo %d: ", i+1);
+        scanf("%d", &v[i]);
+    }
+
+    modificar(v, n, pares, qtd_pares, impares, qtd_impares);
+
+    printf("Quantidade Pares: %d\n", qtd_pares);
+    puts("Pares: ");
+    for(int i = 0; i < qtd_pares; i++){
+        printf("%d ", pares[i]);
+    }
+
+    printf("\nQuantidade Impares: %d\n", qtd_impares);
+    puts("Impares: ");
+    for(int i = 0; i < qtd_impares; i++){
+        printf("%d ", impares[i]);
+    }
+
+}
