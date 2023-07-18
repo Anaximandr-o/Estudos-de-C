@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+const int TAM = 5;
+
+struct Veiculo{
+    char placa[8];
+    char modelo [31];
+    int ano;
+    float valor;
+};
+
+void ler_veiculo(Veiculo veiculos[], int tam){
+    for(int i = 0; i < tam; i++){
+        printf("Placa: ");
+        gets(veiculos[i].placa);
+        printf("Modelo: ");
+        gets(veiculos[i].modelo);
+        printf("Ano: ");
+        scanf("%d", &veiculos[i].ano);
+        printf("Valor: ");
+        scanf("%f", &veiculos[i].valor);
+        getchar();
+    }
+}
+
+void ordenar_placa(Veiculo veiculos[], int tam){
+    
+bool trocou = true;
+int k = tam-1;
+
+while (k > 0 && trocou){
+    trocou = false;
+    for (int i = 0; i < k; i++)
+        if (strcmp(veiculos[i].placa, veiculos[i+1].placa) > 0) {
+            Veiculo aux = veiculos[i];
+            veiculos[i] = veiculos[i+1];
+            veiculos[i+1] = aux;
+            trocou = true;
+}
+    k--;
+}
+
+}
+
+void imprimir_placa(Veiculo veiculos[], int tam){
+    for(int i = 0; i < tam; i++){
+        printf("Placa: %s\n", veiculos[i].placa);
+        printf("Modelo: %s\n", veiculos[i].modelo);
+        printf("Ano: %d\n", veiculos[i].ano);
+        printf("Valor: %f\n", veiculos[i].valor);
+    }
+}
+
+int main(){
+    Veiculo veiculos[TAM];
+
+    ler_veiculo(veiculos, TAM);
+
+    ordenar_placa(veiculos, TAM);
+
+    imprimir_placa(veiculos, TAM);
+}
